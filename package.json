@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "dev": "node --watch app.js",
     "watch": "tailwindcss -i ./public/styles/global.css -o ./public/styles/globalOut.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
