@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="overflow-hidden" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/globalOut.css" />
+    <title>Home</title>
+  </head>
+
+  <body
+    class="flex h-svh flex-col overflow-hidden bg-slate-100 selection:bg-indigo-300"
+  >
+    <header class="sticky top-0 bg-slate-100 p-2 text-center drop-shadow">
+      <h1 class="text-3xl font-bold text-indigo-500 underline">ChatApp</h1>
+    </header>
+    <main id="messages" class="flex flex-1 flex-col overflow-auto bg-slate-300">
+      <div class="flex flex-1 flex-col items-center gap-6 p-4 mx-10">
+        <% messages.map((msg,index) => { %>
+          <% if (index %2 == 0) { %>
+            <div class="bg-gray-400 p-2 rounded-lg shadow self-start">
+              <p><%= msg.text %></p>
+              <p><%= msg.added %></p>
+            </div>
+          <% } else { %>
+            <div class="bg-indigo-400 p-2 rounded-lg shadow self-end">
+              <p><%= msg.text %></p>
+              <p><%= msg.added %></p>
+            </div>
+          <% } %>
+        <% }) %>
+      </div>
+      <footer class="sticky bottom-0 bg-slate-400 p-4">
+        <%- include('message') %>
+      </footer>
+    </main>
+    <footer class="p-2 text-center">&#64;Steliospne</footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const messagesContainer = document.getElementById("messages");
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    });
+  </script>
+</html>
