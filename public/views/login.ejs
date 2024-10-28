@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/globalOut.css" />
+  <title>Login</title>
+</head>
+
+<body class="">
+  <main class="m-auto flex min-h-svh max-w-screen-lg items-center justify-center">
+    <div class="flex-1">
+      <h1 class="mb-4 text-7xl font-medium text-indigo-500">ChatApp</h1>
+      <p>
+        Stay connected with friends
+        <span><a class="font-bold text-indigo-500 hover:text-opacity-90 hover:underline" href="/newUser">Sign-up</a></span>
+        now!
+      </p>
+    </div>
+    <form class="m-20 rounded-lg border-4 border-solid border-indigo-300 p-8 shadow-lg" action="/authentication" method="post">
+      <div class="flex flex-col gap-6">
+        <label for="userName" class="hidden"> </label>
+        <input class="w-60 rounded border-2 border-solid border-indigo-300 px-4 py-2 focus-visible:rounded focus-visible:border-indigo-600 focus-visible:outline focus-visible:outline-2" type="text" name="userName" id="userName" placeholder="Username" />
+        <!-- flex w-full items-center justify-between -->
+        <label for="pwd" class="hidden"> </label>
+        <input class="w-60 rounded border-2 border-solid border-indigo-300 px-4 py-2 focus-visible:rounded focus-visible:border-indigo-600 focus-visible:outline focus-visible:outline-2" type="password" name="pwd" id="pwd" placeholder="Password" />
+        <button class="rounded bg-indigo-400 p-1 font-medium text-white" type="submit">
+          Login
+        </button>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>

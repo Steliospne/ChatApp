@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "node --watch app.js",
+    "db-init-prod": "node ./db/populate.js postgresgl://$DB_USER_REMOTE:$DB_SECRET_REMOTE@$DB_HOST_REMOTE/koyebdb",
+    "db-init-local": "node ./db/populate.js postgresgl://$DB_USER_LOCAL:$DB_SECRET_LOCAL@$DB_HOST_LOCAL/chatapp",
     "watch": "tailwindcss -i ./public/styles/global.css -o ./public/styles/globalOut.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,8 +15,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "express-validation": "^4.1.1",
+    "pg": "^8.13.1"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
